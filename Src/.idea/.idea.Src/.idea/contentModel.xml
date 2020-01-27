@@ -3,12 +3,14 @@
   <component name="ContentModelStore">
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="Api" t="IncludeRecursive">
+        <e p="Actors.cs" t="Include" />
         <e p="Api.csproj" t="IncludeRecursive" />
+        <e p="api.hocon" t="Include" />
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
-          <e p="WeatherForecastController.cs" t="Include" />
+          <e p="CustomerController.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -25,7 +27,9 @@
         <e p="WeatherForecast.cs" t="Include" />
       </e>
       <e p="ClusterNode" t="IncludeRecursive">
+        <e p="Actors.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="cluster.hocon" t="Include" />
         <e p="ClusterNode.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -38,7 +42,13 @@
       </e>
       <e p="packages" t="ExcludeRecursive" />
       <e p="Shared" t="IncludeRecursive">
+        <e p="Actors" t="Include">
+          <e p="Customer.cs" t="Include" />
+          <e p="Messages.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Constants.cs" t="Include" />
+        <e p="MessageExtractor.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -46,6 +56,8 @@
             </e>
           </e>
         </e>
+        <e p="Print.cs" t="Include" />
+        <e p="ShardEnvelope.cs" t="Include" />
         <e p="Shared.csproj" t="IncludeRecursive" />
       </e>
       <e p="Src.sln" t="IncludeFlat" />

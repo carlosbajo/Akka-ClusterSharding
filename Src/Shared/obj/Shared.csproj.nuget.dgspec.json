@@ -38,6 +38,32 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Akka": {
+              "target": "Package",
+              "version": "[1.4.0-beta3, )"
+            },
+            "Akka.Bootstrap.Docker": {
+              "target": "Package",
+              "version": "[0.3.0, )"
+            },
+            "Akka.Cluster": {
+              "target": "Package",
+              "version": "[1.4.0-beta3, )"
+            },
+            "Akka.Cluster.Sharding": {
+              "target": "Package",
+              "version": "[1.4.0-beta3, )"
+            },
+            "Akka.Persistence": {
+              "target": "Package",
+              "version": "[1.4.0-beta3, )"
+            },
+            "Akka.Persistence.PostgreSql": {
+              "target": "Package",
+              "version": "[1.3.9, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
