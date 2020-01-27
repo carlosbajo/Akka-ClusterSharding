@@ -24,10 +24,10 @@ namespace Api
 
         private Actors(Config config)
         {
-            _system = ActorSystem.Create(Constants.SystemName);
+            _system = ActorSystem.Create(Constants.SystemName, config);
 
             var sharding = ClusterSharding.Get(_system);
-
+            
             CustomerProxy = sharding.StartProxy(
                 typeName: Customer.TypeName,
                 role: Constants.ClusterNodeRoleName,
@@ -39,7 +39,7 @@ namespace Api
             var directory =
                 AppContext.BaseDirectory.Substring(0,
                     AppContext.BaseDirectory.IndexOf("bin", StringComparison.Ordinal));
-
+            
             var hocon = File.ReadAllText($"{directory}/api.hocon");
 
             var config = ConfigurationFactory

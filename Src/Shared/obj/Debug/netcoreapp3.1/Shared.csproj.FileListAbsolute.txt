@@ -1,0 +1,8 @@
+/Users/carlosalexisbajopreciado/Desktop/Akka-ClusterSharding/Src/Shared/bin/Debug/netcoreapp3.1/Shared.deps.json
+/Users/carlosalexisbajopreciado/Desktop/Akka-ClusterSharding/Src/Shared/bin/Debug/netcoreapp3.1/Shared.dll
+/Users/carlosalexisbajopreciado/Desktop/Akka-ClusterSharding/Src/Shared/bin/Debug/netcoreapp3.1/Shared.pdb
+/Users/carlosalexisbajopreciado/Desktop/Akka-ClusterSharding/Src/Shared/obj/Debug/netcoreapp3.1/Shared.csprojAssemblyReference.cache
+/Users/carlosalexisbajopreciado/Desktop/Akka-ClusterSharding/Src/Shared/obj/Debug/netcoreapp3.1/Shared.AssemblyInfoInputs.cache
+/Users/carlosalexisbajopreciado/Desktop/Akka-ClusterSharding/Src/Shared/obj/Debug/netcoreapp3.1/Shared.AssemblyInfo.cs
+/Users/carlosalexisbajopreciado/Desktop/Akka-ClusterSharding/Src/Shared/obj/Debug/netcoreapp3.1/Shared.dll
+/Users/carlosalexisbajopreciado/Desktop/Akka-ClusterSharding/Src/Shared/obj/Debug/netcoreapp3.1/Shared.pdb

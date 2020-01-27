@@ -9,7 +9,6 @@ using Shared.Actors;
 
 namespace Api.Controllers
 {
-    [Route("api/[controller]")]
     public class CustomerController : ControllerBase
     {
         [HttpGet, Route("{id}")]

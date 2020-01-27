@@ -16,8 +16,8 @@ namespace Shared.Actors
         private static string ShardId => Context.Parent.Path.Name;
         private static string EntityId => Context.Self.Path.Name;
         public override string PersistenceId { get; } = $"{ShardId}/${EntityId}";
-        public static readonly TimeSpan InactivityWindow = TimeSpan.FromSeconds(20);
-        public Dictionary<string, CartItem> CartItems = new Dictionary<string, CartItem>();
+        private static readonly TimeSpan InactivityWindow = TimeSpan.FromSeconds(20);
+        private Dictionary<string, CartItem> _cartItems = new Dictionary<string, CartItem>();
         #endregion
 
         public Customer()
@@ -26,7 +26,7 @@ namespace Shared.Actors
             {
                 if (!string.IsNullOrEmpty(purchased.ProductId))
                 {
-                    CartItems.Add(purchased.ProductId, purchased);
+                    _cartItems.Add(purchased.ProductId, purchased);
                 }
             });
             CommandAny(Handle);
@@ -47,24 +47,24 @@ namespace Shared.Actors
 
         private void HandleAddItem(AddItem purchased)
         {
-            if (!CartItems.ContainsKey(purchased.ProductId))
+            if (!_cartItems.ContainsKey(purchased.ProductId))
             {
                 Persist(new CartItem(purchased.Product, purchased.Quantity, purchased.ProductId), item =>
                 {
-                    CartItems.Add(item.ProductId, item);
+                    _cartItems.Add(item.ProductId, item);
                     Print.Message($"> {EntityId} added {item.Product} x {item.Quantity}");
                 });
             }
         }
         private void HandleShowBasket()
         {
-            Sender.Tell(new Basket(ShardId, EntityId, CartItems), Self);
+            Sender.Tell(new Basket(ShardId, EntityId, _cartItems), Self);
             Print.Message($"> {EntityId} requested basket contents.");
         }
         private void HandleEmptyBasket()
         {
             DeleteMessages(long.MaxValue);
-            CartItems = new Dictionary<string, CartItem>();
+            _cartItems = new Dictionary<string, CartItem>();
             Print.Message($"> {EntityId} emptied their cart");
         }
         private void HandleReceiveTimeOut()

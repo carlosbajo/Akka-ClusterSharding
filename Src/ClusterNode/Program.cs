@@ -1,4 +1,5 @@
 ﻿using System;
+using Shared;
 
 namespace ClusterNode
 {
@@ -17,7 +18,17 @@ namespace ClusterNode
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Print.Line(ConsoleColor.Cyan);
+            Print.Message("CLUSTER NODE", ConsoleColor.Cyan);
+            Print.Line(ConsoleColor.Cyan);
+
+            var actors = Actors.Build();
+
+            Console.CancelKeyPress += async (sender, eventArgs) => { await actors.Shutdown(); };
+
+            actors
+                .StayAlive()
+                .Wait();
         }
     }
 }

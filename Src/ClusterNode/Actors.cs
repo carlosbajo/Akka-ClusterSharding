@@ -23,6 +23,7 @@ namespace ClusterNode
                     AppContext.BaseDirectory.IndexOf("bin", StringComparison.Ordinal));
             
             var hocon = File.ReadAllText($"{directory}cluster.hocon");
+            
             var config = ConfigurationFactory
                 .ParseString(hocon)
                 .WithFallback(ClusterSharding.DefaultConfig());
